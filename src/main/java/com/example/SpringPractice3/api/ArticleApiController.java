@@ -2,7 +2,7 @@ package com.example.SpringPractice3.api;
 
 import com.example.SpringPractice3.dto.ArticleForm;
 import com.example.SpringPractice3.entity.Article;
-import com.example.SpringPractice3.repository.ArticleRepository;
+import com.example.SpringPractice3.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.example.SpringPractice3.api;
+package com.example.SpringPractice3.service;
 
 import com.example.SpringPractice3.dto.ArticleForm;
 import com.example.SpringPractice3.entity.Article;
