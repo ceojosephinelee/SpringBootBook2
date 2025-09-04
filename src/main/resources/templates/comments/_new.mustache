@@ -56,18 +56,5 @@
         });
 
     }
-    {
-        //수정 완료 버튼 선택
-        const commentUpdateBtn = document.querySelector("#comment-update-btn");
-        //클릭 이벤트 처리
-        commentUpdateBtn.addEventListener("click",function (){
-            const comment ={
-                id: document.querySelector("#edit-comment-id").value,
-                nickname: document.querySelector("#edit-comment-nickname").value,
-                body: document.querySelector("#edit-comment-body").value,
-                articleId: document.querySelector("#edit-comment-article-id").value
-            };
-            console.log(comment);
-        });
-    }
+
 </script>
