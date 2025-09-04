@@ -1,8 +1,10 @@
 package com.example.SpringPractice3.controller;
 
+import com.example.SpringPractice3.dto.CommentDto;
 import com.example.SpringPractice3.entity.Article;
 import com.example.SpringPractice3.dto.ArticleForm;
 import com.example.SpringPractice3.repository.ArticleRepository;
+import com.example.SpringPractice3.service.CommentService;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ import java.util.Optional;
 public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository; //new 생성해줄 필요 없이 선언만 해도 됨.-->springboot의 특성(DI, IOC)
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/articles/new")
     public String newArticleForm(){
@@ -51,8 +55,10 @@ public class ArticleController {
         //방법1. Optional<Article> articleEntity = articleRepository.findById(id);
         //방법2.
         Article articleEntity = articleRepository.findById(id).orElse(null);
+        List<CommentDto> commentsDtos = commentService.comments(id);
         //2. 모델에 데이터 등록하기
         model.addAttribute("article", articleEntity);
+        model.addAttribute("commentDtos", commentsDtos);
         //3. 뷰 페이지 반환하기
 
         return "articles/show";
@@ -108,4 +114,5 @@ public class ArticleController {
         //3. 결과 페이지로 리다이렉트하기
         return "redirect:/articles";
     }
+
 }
