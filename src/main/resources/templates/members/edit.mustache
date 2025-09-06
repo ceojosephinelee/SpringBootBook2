@@ -1,0 +1,19 @@
+{{>layouts/header}}
+<form action="/members/update" method="post"> <!--절대 경로!!!!!!!!!!!!-->
+    <input name="id" type="hidden" value="{{member.id}}"> <!--id가 몇 변인 member를 수정해야하는지 알려줘야하나 화면에 표시할 필요 없으므로-->
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="text" class="form-control" name="email" value="{{member.email}}">
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" value="{{member.password}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">수정 완료</button>
+    <a href="/members/{{member.id}}">back</a>
+
+</form>
+
+{{>layouts/footer}}

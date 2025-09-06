@@ -1,0 +1,19 @@
+{{>layouts/header}}
+
+<form action="/members/create" method="post"> <!--절대 경로!!!!-->
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="text" class="form-control" name="email">
+
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="text" class="form-control" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="members">back</a>
+
+
+{{>layouts/footer}}
